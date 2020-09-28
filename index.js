@@ -64,18 +64,18 @@ client.connect(err => {
       })
     })
 
-    // app.patch("/update/:id", (req, res) => {
+    app.patch("/update/:id", (req, res) => {
 
-    //   collection.updateOne({_id: ObjectId(req.params.id)},
-    //   {
-    //     $set: {price: req.body.price, quantity: req.body.quantity}
-    //   })
-    //   .then(result => {
+      collection.updateOne({_id: ObjectId(req.params.id)},
+      {
+        $set: {price: req.body.price, quantity: req.body.quantity}
+      })
+      .then(result => {
 
-    //     console.log(result);
-    //   })
+        console.log(result);
+      })
 
-    // })
+    })
 
 
   })

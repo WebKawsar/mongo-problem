@@ -12,8 +12,8 @@
 
     <form action="/addProduct" method="POST">
         <input type="text" placeholder="name" name="name" id="name">
-        <input type="text" placeholder="price" name="price" id="price">
-        <input type="text" placeholder="quantity" name="quantity" id="quantity">
+        <input type="text" placeholder="price" name="price">
+        <input type="text" placeholder="quantity" name="quantity">
         <input type="submit" value="Add Products">
     </form>
     <div id="products">
@@ -71,18 +71,15 @@
             const quantity = document.getElementById('quantity').value;
             const product = {id, price, quantity};
             
-
-            console.log(price);
-
-            // fetch(`/update/${id}`, {
-            //     method: "PATCH",
-            //     headers: {'Content-Type': 'application/json'},
-            //     body: JSON.stringify(product)
-            // })
-            // .then(response => response.json())
-            // .then(data => {
-            //     console.log("updated");
-            // })
+            fetch(`/update/${id}`, {
+                method: "PATCH",
+                headers: {'Content-Type': 'application/json'},
+                body: JSON.stringify(product)
+            })
+            .then(response => response.json())
+            .then(data => {
+                console.log("updated");
+            })
 
         }
 
